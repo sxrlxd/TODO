@@ -1,12 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
+const taskRoutes = require("./routes/taskRoutes");
+
 const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
+
+app.use("/api", taskRoutes);
 
 // MongoDB Connection
 mongoose
